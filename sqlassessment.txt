@@ -1,0 +1,118 @@
+What do you understand By Database?
+Database is information that is set up for easy access,updating,and management. 
+
+What is Normalization?
+
+It uses to manage data electronically it uses SQL queries to achieve this.
+
+What is Difference between DBMS and RDBMS? 
+
+Database Management system(DBMS) is a software that used to create,maintain and provide controlled access to the data. Relational database Management System is advanced version of DBMS.
+DBMS stores data as file while RDMS stores data in tabular form. Data elements can only be acess individually in DBMS while in RDBMS multiple data elements can be accessed at the same time.
+Normalization is present in RDBMS while it is not present in  DBMS.DBMS deals with small data while RDBMS deals with large data. 
+
+
+What is MF Cod Rule of RDBMS Systems? 
+If a management system or software follows 9-12 rules proposed by E.F. Codd, it qualifies to be a complete Relational Database Management System (RDBMS).
+
+What do you understand By Data Redundancy? 
+
+Data redundancy occurs when the same piece of data is stored in two or more separate places and is a common occurrence in many businesses. 
+
+What is DDL Interpreter? 
+
+It interprets the DDL(Data Defintion language) statements and records the generated statements in the table containing metadata.
+
+What is DML Compiler in SQL? 
+
+It processes the DML statements into machine language so that it can be executed. 
+
+What is SQL Key Constraints writing an Example of SQL Key Constraints?
+
+SQL constraints are used to specify rules for the data in a table. Constraints are used to limit the type of data that can go into a table. 
+This ensures the accuracy and reliability of the data in the table. An example: FOREIGN KEY(table2.colname) REFERENCES table1(primary_key). This is used to access the information from
+one table to another table.
+
+What is save Point? How to create a save Point write a Query? 
+
+Savepoint is a command in SQL that is used with the rollback command.Savepoint is helpful when we want to roll back only a small part of a table and not the whole table. 
+  mysql SAVEPOINT somename;  
+
+ What is trigger and how to create a Trigger in SQL? 
+
+A trigger is a set of SQL statements that reside in system memory with unique names. It used when your table shared and someone tries to perform DML queries(insert/
+update/delete) and you want to get notified what changes are there. Create trigger TriggerName after/before insert ON tableName(XYZ) for each row
+
+
+
+
+
+
+
+Create table Student(Rollno int,
+    Name varchar(255),
+    Branch varchar(255))
+
+INSERT into Student(Rollno,Name,Branch)VALUES("1","Jay","Computer Science");
+   
+Problem 1: 
+
+INSERT into Student(Rollno,Name,Branch)VALUES("2","Suhani","Electronic and Com");
+
+
+
+INSERT into Student(Rollno,Name,Branch)VALUES("3","Kriti","Electronic and Com");
+
+ALTER TABLE `Student` ADD PRIMARY KEY(`Rollno`);
+
+Create table Exam(Rollno int, S_code varchar(255), Marks varchar(255), P_code varchar(255));
+
+Insert into Exam(Rollno,S_code,Marks,P_code)Values("1","CS11","50","CS")
+Insert into Exam(Rollno,S_code,Marks,P_code)Values("2","EC101","66","EC");
+Insert into Exam(Rollno,S_code,Marks,P_code)Values("2","EC102","70","EC");
+
+Insert into Exam(Rollno,S_code,Marks,P_code)Values("3","EC101","45","EC");
+
+Insert into Exam(Rollno,S_code,Marks,P_code)Values("3","EC102","50","EC");
+
+Problem 2:
+
+Create Table Information(FirstName varchar(244),LastName varchar(255),Address varchar(255),City Varchar(255),Age int(255))
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Mickey","Mouse","123 Fantasy Way","Anaheim","73");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Bat","Man","321 Cavern Ave","Gotham","54");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Wonder","Woman","987 Truth Way","Paradise","39");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Donald","Duck","555 Quack Street","Mallard","65");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Bugs","Bunny","567 Carrot Street","Rascal","58");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Wiley","Coyote","999 Acme Way","Canyon","61");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Cat","Woman","234 Purrfect Street","Hairball","32");
+Insert into Information (FirstName,LastName,Address,City,Age)VALUES("Tweety","Bird","543","Itotltaw","28");
+
+
+Problem 3: Employee and Incentive:
+
+Create Table Employee(Employee_i int(255),First_name varchar(244),Last_name varchar(255),Salary int(255),Joining_date varchar(255),Department varchar(255));
+
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("1","John","Abraham","1000000","01-Jan-13 12.00.00AM","Banking");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("2","Michael","Clarke","800000","01-Jan-13 12.00.00AM","Insurance");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("3","Roy","Thomas","700000","01-Feb-13 12.00.00AM","Banking");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("4","Tom","Jose","600000","01-Feb-13 12.00.00AM","Insurance");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("5","Jerry","Pinto","650000","01-Feb-13 12.00.00AM","Insurance");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("6","Philip","Mathew","750000","01-Jan-13 12.00.00AM","Services");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("6","TestName1","123","650000","01-Jan-13 12.00.00AM","Services");
+Insert into Employee (Employee_i,First_name,Last_name,Salary,Joining_date,Department)VALUES("6","TestName2","Lname%","600000","01-Feb-13 12.00.00AM","Insurance");
+
+
+Table Incentive:
+
+Create Table Incentive(Employee_red_i int(255),Incentive_date varchar(255),Incentive_amount int(255));
+
+Insert into Incentive(Employee_red_i,Incentive_date,Incentive_amount)VALUES("1","01-Feb-13","5000");
+Insert into Incentive(Employee_red_i,Incentive_date,Incentive_amount)VALUES("2","01-Feb-13","3000");
+Insert into Incentive(Employee_red_i,Incentive_date,Incentive_amount)VALUES("3","01-Feb-13","4000");
+Insert into Incentive(Employee_red_i,Incentive_date,Incentive_amount)VALUES("1","01-Jan-13","4500");
+Insert into Incentive(Employee_red_i,Incentive_date,Incentive_amount)VALUES("2","01-Jan-13","3500");
+
+
+
+
+
