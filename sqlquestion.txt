@@ -1,3 +1,0 @@
-What do you understand By Database?
-
-Database is where the given information gets stored and organize this data(information).
